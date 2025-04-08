@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> COLLEGE SPHERE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="your-style-file.css">
+
+   
+    <style>
+      body { font-family: Arial, sans-serif; background: #e3fce3; text-align: center; }
+      .college-box { 
+          background: #f8c8c8; 
+          padding: 20px; 
+          border-radius: 10px; 
+          width: 300px; 
+          margin: auto; 
+      }
+      .college-box a { 
+          display: block;  /* Har college name alag line pe aayega */
+          background: white; 
+          padding: 10px; 
+          margin: 5px 0; 
+          text-decoration: none; 
+          color: black; 
+          border-radius: 5px; 
+          text-align: center;
+          border: 1px solid black; /* Box effect ke liye */
+      }
+      .college-box a:hover { background: lightgray; }
+  </style>
+
+</head>
+<div class="top-navigation">
+  <button class="colleges-button" onclick="showSection('colleges')">Colleges</button>
+  <button class="exams-button" onclick="showSection('exams')">Exams</button>
+  <button class="courses-button" onclick="showSection('courses')">Courses</button>
+  <button class="events-button" onclick="showSection('events')">Events</button>
+  <!-- 🔍 Search Box -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for Colleges, Courses, Exams...">
+    <button onclick="searchFunction()">Search</button>
+  </div>
+</div>
+<div id="colleges" class="section" style="display:none;">
+  <h2>Colleges</h2>
+  <div class="colleges-container">
+      <a href="shivalik.html" class="college-link">SHIVALIK COLLEGE OF ENGINEERING</a>
+      <a href="icfai.html" class="college-link">ICFAI UNIVERSITY</a>
+      <a href="uttaranchal.html" class="college-link">UTTARANCHAL UNIVERSITY</a>
+      <a href="upes.html" class="college-link">UPES (UNIVERSITY OF PETROLEUM)</a>
+      <a href="dit.html" class="college-link">DIT UNIVERSITY</a>
+      <a href="graphic.html" class="college-link">GRAPHIC ERA UNIVERSITY</a>
+      <a href="ims.html" class="college-link">IMS UNISON UNIVERSITY</a>
+      <a href="maya.html" class="college-link">MAYA DEVI UNIVERSITY</a>
+      <a href="jigyasa.html" class="college-link">JIGYASA UNIVERSITY</a>
+      <a href="tulas.html" class="college-link">TULA'S INSTITUTE</a>
+      <a href="bfit.html" class="college-link">BFIT GROUP OF INSTITUTIONS</a>
+      <a href="devbhoomi.html" class="college-link">DEV BHOOMI UTTARAKHAND UNIVERSITY</a>
+      <a href="himalayan.html" class="college-link">HIMALAYAN INSTITUTE OF TECHNOLOGY</a>
+      <a href="quantum.html" class="college-link">QUANTUM UNIVERSITY</a>
+      <a href="guru.html" class="college-link">SHRI GURU RAM RAI UNIVERSITY</a>
+      <a href="jbit.html" class="college-link">JBIT INSTITUTE OF TECHNOLOGY</a>
+      <a href="dolphin.html" class="college-link">DOLPHIN INSTITUTE</a>
+  </div>
+
+  <button onclick="addCollege()">Add College</button>
+  <ul id="collegeList"></ul>
+</div>
+
+  
+  <div id="exams" class="section" style="display:none;">
+    <h2>Exams</h2>
+    
+<input type="text" id="examName" placeholder="Add Exam Name" value="JOINT ENTRANCE EXAMINATION MAIN (JEE MAIN)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="JOINT ENTRANCE EXAMINATION ADVANCED (JEE ADVANCED)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="STATE ENGINEERING ENTRANCE EXAMS (E.G., MHT CET, WBJEE, KEAM)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="NATIONAL ELIGIBILITY CUM ENTRANCE TEST (NEET)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="ALL INDIA INSTITUTE OF MEDICAL SCIENCES (AIIMS) MBBS EXAM">
+<input type="text" id="examName" placeholder="Add Exam Name" value="IPU CET (GGSIU)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="COMMON LAW ADMISSION TEST (CLAT)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="ALL INDIA LAW ENTRANCE TEST (AILET)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="COMMON MANAGEMENT ADMISSION TEST (CMAT)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="INDIAN COUNCIL OF AGRICULTURAL RESEARCH ALL INDIA ENTRANCE EXAMINATION (ICAR AIEEA)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="CHRIST UNIVERSITY ENTRANCE TEST (CUET)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="NATIONAL COUNCIL FOR HOTEL MANAGEMENT JOINT ENTRANCE EXAMINATION (NCHM JEE)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="NATIONAL APTITUDE TEST IN ARCHITECTURE (NATA)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="DAT (NATIONAL INSTITUTE OF DESIGN DESIGN APTITUDE TEST)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="UCEED (UNDERGRADUATE COMMON ENTRANCE EXAMINATION FOR DESIGN)">
+<input type="text" id="examName" placeholder="Add Exam Name" value="ALL INDIA PRE-VETERINARY TEST (AIPVT)">
+
+    <button onclick="addExam()">Add Exam</button>
+    <ul id="examList"></ul>
+  </div>
+  
+  <div id="courses" class="section" style="display:none;">
+    <h2>Courses</h2>
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF PHARMACY (B.PHARM)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF BUSINESS ADMINISTRATION (BBA)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF COMPUTER APPLICATIONS (BCA)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF EDUCATION (B.ED)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="MASTER OF BUSINESS ADMINISTRATION (MBA)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="MASTER OF PHARMACY (M.PHARM)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="MASTER OF TECHNOLOGY (M.TECH)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF TECHNOLOGY (B.TECH)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF LAW (LLB)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF MEDICINE AND BACHELOR OF SURGERY (MBBS)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="MASTER OF COMPUTER APPLICATIONS (MCA)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="MASTER OF SCIENCE (MSC)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="DIPLOMA IN PHARMACY (D.PHARM)">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF SCIENCE (B.SC) IN AGRICULTURE">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF TECHNOLOGY (B.TECH) IN COMPUTER SCIENCE">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF TECHNOLOGY (B.TECH) IN MECHANICAL ENGINEERING">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF TECHNOLOGY (B.TECH) IN CIVIL ENGINEERING">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF TECHNOLOGY (B.TECH) IN ELECTRICAL ENGINEERING">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF TECHNOLOGY (B.TECH) IN ELECTRONICS & COMMUNICATION">
+<input type="text" id="courseName" placeholder="Add Course Name" value="MASTER OF TECHNOLOGY (M.TECH) IN COMPUTER SCIENCE">
+<input type="text" id="courseName" placeholder="Add Course Name" value="MASTER OF TECHNOLOGY (M.TECH) IN MECHANICAL ENGINEERING">
+<input type="text" id="courseName" placeholder="Add Course Name" value="MASTER OF TECHNOLOGY (M.TECH) IN THERMAL ENGINEERING">
+<input type="text" id="courseName" placeholder="Add Course Name" value="BACHELOR OF SCIENCE (B.SC) HONOURS IN FOOD TECHNOLOGY">
+
+    <button onclick="addCourse()">Add Course</button>
+    <ul id="courseList"></ul>
+  </div>
+  
+  <div id="events" class="section" style="display:none;">
+    <h2>Events</h2>
+    <img id="eventImage" src="assets/img/shivalikcolllege.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" shivalik college of engineering ">
+
+    <img id="eventImage" src="assets/img/shivalikcolllege1.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" shivalik college of engineering ">
+
+    <img id="eventImage" src="assets/img/shivalikcolllege2.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" shivalik college of engineering ">
+
+    <img id="eventImage" src="assets/img/shivalikcolllege3.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" shivalik college of engineering ">
+
+    <img id="eventImage" src="assets/img/shivalikcolllege4.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px; height: 200px;">
+    <input type="text" id="eventName" placeholder=" shivalik college of engineering ">
+
+    <img id="eventImage" src="assets/img/shivalikcolllege5.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" shivalik college of engineering ">
+
+    <img id="eventImage" src="assets/img/shivalikcolllege6.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px; height: 200px;">
+    <input type="text" id="eventName" placeholder=" shivalik college of engineering ">
+
+    <img id="eventImage" src="assets/img/uttaranchal university2.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" UTTARANCHAL UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/uttranchal university.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" UTTARANCHAL UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/uttranchal university1.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px; height: 200px;">
+    <input type="text" id="eventName" placeholder=" UTTARANCHAL UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/uttaranchal university3.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" UTTARANCHAL UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/uttaranchal university4.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" UTTARANCHAL UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/uttaranchal university5.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" UTTARANCHAL UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/uttaranchal university6.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" UTTARANCHAL UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/uttaranchal university7.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" UTTARANCHAL UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dev bhomi6.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DEV BHOOMI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dev bhoomi .jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DEV BHOOMI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dev bhoomi.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DEV BHOOMI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dev bhoomi1.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DEV BHOOMI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dev bhoomi2.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DEV BHOOMI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dev bhoomi3.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DEV BHOOMI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dev bhoomi4.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DEV BHOOMI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dev bhoomi5.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DEV BHOOMI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/UPES.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder="UPES (UNIVERSITY OF PETROLEUM)  ">
+
+    <img id="eventImage" src="assets/img/upes1.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder="UPES (UNIVERSITY OF PETROLEUM)  ">
+
+    <img id="eventImage" src="assets/img/upes2.jpg.png" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder="UPES (UNIVERSITY OF PETROLEUM)  ">
+
+    <img id="eventImage" src="assets/img/upes3.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder="UPES (UNIVERSITY OF PETROLEUM)  ">
+
+    <img id="eventImage" src="assets/img/upes4.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder="UPES (UNIVERSITY OF PETROLEUM)  ">
+
+    <img id="eventImage" src="assets/img/upes5.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder="UPES (UNIVERSITY OF PETROLEUM)  ">
+
+    <img id="eventImage" src="assets/img/upes6.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder="UPES (UNIVERSITY OF PETROLEUM)  ">
+
+    <img id="eventImage" src="assets/img/icfai.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" ICFAI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/icfai1.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px; height: 200px;">
+    <input type="text" id="eventName" placeholder=" ICFAI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/icfai2.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" ICFAI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/icfai3.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" ICFAI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/icfai4.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" ICFAI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/icfai5.JPG" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" ICFAI UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dit.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DIT UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dit1.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DIT UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dit2.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DIT UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dit3.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DIT UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dit4.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DIT UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/dit5.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" DIT UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/icfai.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" TULA'S INSTITUTE ">
+
+    <img id="eventImage" src="assets/img/tulas1.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" TULA'S INSTITUTE ">
+
+    <img id="eventImage" src="assets/img/tulas2.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" TULA'S INSTITUTE ">
+
+    <img id="eventImage" src="assets/img/tulas3.jpg.png" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" TULA'S INSTITUTE ">
+
+    <img id="eventImage" src="assets/img/tulas4.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" TULA'S INSTITUTE ">
+
+    <img id="eventImage" src="assets/img/tulas5.jpg.png" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" TULA'S INSTITUTE ">
+
+    <img id="eventImage" src="assets/img/bfit.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" BFIT GROUP OF INSTITUTIONS ">
+
+    <img id="eventImage" src="assets/img/bfit1.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" BFIT GROUP OF INSTITUTIONS ">
+
+    <img id="eventImage" src="assets/img/bfit2.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" BFIT GROUP OF INSTITUTIONS ">
+
+    <img id="eventImage" src="assets/img/bfit3.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" BFIT GROUP OF INSTITUTIONS ">
+
+    <img id="eventImage" src="assets/img/bfit4.jpg.avif" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" BFIT GROUP OF INSTITUTIONS ">
+
+    <img id="eventImage" src="assets/img/bfit5.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" BFIT GROUP OF INSTITUTIONS ">
+
+    <img id="eventImage" src="assets/img/graphic era.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" GRAPHIC ERA UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/graphic era1.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" GRAPHIC ERA UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/graphic era2.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" GRAPHIC ERA UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/graphic era3.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" GRAPHIC ERA UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/graphic era4.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" GRAPHIC ERA UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/graphic era5.jpg.webp" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" GRAPHIC ERA UNIVERSITY ">
+
+    <img id="eventImage" src="assets/img/jbit.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px; height: 200px;">
+    <input type="text" id="eventName" placeholder=" JBIT INSTITUTE OF TECHNOLOGY ">
+    
+    <img id="eventImage" src="assets/img/jbit1.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" JBIT INSTITUTE OF TECHNOLOGY ">
+
+    <img id="eventImage" src="assets/img/jbit2.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px; height: 200px;">
+    <input type="text" id="eventName" placeholder=" JBIT INSTITUTE OF TECHNOLOGY ">
+
+    <img id="eventImage" src="assets/img/jbit3.jpg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" JBIT INSTITUTE OF TECHNOLOGY ">
+
+    <img id="eventImage" src="assets/img/jbit4.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" JBIT INSTITUTE OF TECHNOLOGY ">
+
+    <img id="eventImage" src="assets/img/jbit5.jpeg" alt="Event Image" style="width: 100%; max-width: 300px; border-radius: 10px;">
+    <input type="text" id="eventName" placeholder=" JBIT INSTITUTE OF TECHNOLOGY ">
+
+    <button onclick="addEvent()">Add Event</button>
+    <ul id="eventList"></ul>
+</div>
+
+</header>
+<div class="carousel" data-flickity='{ "wrapAround": true }'>
+
+  <!-- Repeat same overlay for all other images -->
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/website 1 .jpeg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/website 2.jpg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/website 3.jpeg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/website 4.jpg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/website 5.jpg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/website 6.jpg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/website 7.jpg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/website 9.jpg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-cell">
+    <div class="banner-container">
+      <img src="assets/dehradun photos/students 8.jpg" height="383" class="banner-image">
+      <div class="overlay-text">
+        <h4>New <span>Generation</span> University</h4>
+        <h2>AWARDED AS THE</h2>
+        <h1>BEST EMERGING UNIVERSITY</h1>
+        <h3>BY</h3>
+      </div>
+      <div class="admission-buttons">
+        <div class="btn blue">ADMISSIONS OPEN 2025</div>
+        <div class="btn orange">120+ PROGRAMMES</div>
+        <a href="index.html" target="_blank" class="btn red">APPLY NOW</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="side-contact-tags">
+  <a href="tel:+919470626930" class="call-tag" aria-label="Call Us">
+      <img src="assets/logo and campus view/phone-call.png" alt="Call Icon">
+  </a>
+  <a href="https://wa.me/9470626930" class="whatsapp-tag" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
+      <img src="assets/logo and campus view/logo.png" alt="WhatsApp Icon">
+  </a>
+  <a href="index.html" class="whatsapp-tag" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
+    <img src="assets/logo and campus view/user.png" alt="WhatsApp Icon">
+</a>
+</div>
+    <section class="our-colleges-section">
+        <h2>Our Colleges</h2>
+        <p class="section-subtitle">THE RIGHT CHOICE IS RIGHT IN FRONT OF YOU</p>
+
+        <div class="colleges-carousel">
+            <div class="college-card">
+                <img src="assets/img/dit2.jpg" alt="College of Nursing (CoN)">
+                <div class="college-info">
+                    <h3> DEHRADUN INSTITUTE OF TECHNOLOGY</h3>
+                    <a href="#" class="view-details">View Details →</a>
+                </div>
+            </div>
+
+            <div class="college-card">
+                <img src="assets/img/uttaranchal university4.jpg" alt="Dev Bhoomi Medical College of Ayurveda & Hospital (DBMCAH)">
+                <div class="college-info">
+                    <h3>UTTARANCHAL UNIVERSITY</h3>
+                    <a href="#" class="view-details">View Details →</a>
+                </div>
+            </div>
+
+            <div class="college-card">
+                <img src="assets/img/bfit 2.webp" alt="College of Law (CoL)">
+                <div class="college-info">
+                    <h3>BFIT COLLEGE</h3>
+                    <a href="#" class="view-details">View Details →</a>
+                </div>
+            </div>
+
+            <div class="college-card">
+              <img src="assets/img/icfai3.jpg" alt="College of Law (CoL)">
+              <div class="college-info">
+                  <h3>ICFAI UNIVERSITY</h3>
+                  <a href="#" class="view-details">View Details →</a>
+              </div>
+          </div>
+
+          <div class="college-card">
+            <img src="assets/img/upes3.jpg" alt="College of Law (CoL)">
+            <div class="college-info">
+                <h3>UPES UNIVERSITY</h3>
+                <a href="#" class="view-details">View Details →</a>
+            </div>
+        </div>
+
+        <div class="college-card">
+          <img src="assets/img/dev bhoomi 11.jpg.avif" alt="College of Law (CoL)">
+          <div class="college-info">
+              <h3>DEV BHOOMI UNIVERSITY</h3>
+              <a href="#" class="view-details">View Details →</a>
+          </div>
+      </div>
+
+      <div class="college-card">
+        <img src="assets/img/jigyasa 4.jpeg" alt="College of Law (CoL)">
+        <div class="college-info">
+            <h3>JIGYASA UNIVERSITY</h3>
+            <a href="#" class="view-details">View Details →</a>
+        </div>
+    </div>
+
+    <div class="college-card">
+      <img src="assets/img/shivalikcolllege5.jpg" alt="College of Law (CoL)">
+      <div class="college-info">
+          <h3>SHIVALIK COLLEGE OF ENGINEERING</h3>
+          <a href="#" class="view-details">View Details →</a>
+      </div>
+  </div>
+
+  <div class="college-card">
+    <img src="assets/img/dolphin 3.jpg" alt="College of Law (CoL)">
+    <div class="college-info">
+        <h3>DOLPHIN INSTITUTE</h3>
+        <a href="#" class="view-details">View Details →</a>
+    </div>
+</div>
+
+<div class="college-card">
+  <img src="assets/img/upes10.jpeg" alt="College of Law (CoL)">
+  <div class="college-info">
+      <h3>UPES UNIVERSITY</h3>
+      <a href="#" class="view-details">View Details →</a>
+  </div>
+</div>
+
+<div class="college-card">
+  <img src="assets/img/uttaranchal university5.jpg" alt="College of Law (CoL)">
+  <div class="college-info">
+      <h3>UTTARANCHAL UNIVERSITY</h3>
+      <a href="#" class="view-details">View Details →</a>
+  </div>
+</div>
+
+<div class="college-card">
+  <img src="assets/img/dev bhoomi5.jpg.webp" alt="College of Law (CoL)">
+  <div class="college-info">
+      <h3>DEV BHOOMI UNIVERSITY</h3>
+      <a href="#" class="view-details">View Details →</a>
+  </div>
+</div>
+
+<div class="college-card">
+  <img src="assets/img/graphic era3.jpg.webp" alt="College of Law (CoL)">
+  <div class="college-info">
+      <h3>GRAPHIC ERA UNIVERSITY</h3>
+      <a href="#" class="view-details">View Details →</a>
+  </div>
+</div>
+ </div>
+
+        <div class="carousel-navigation">
+            <button class="nav-button prev">&lt;</button>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                </div>
+            <button class="nav-button next">&gt;</button>
+        </div>
+    </section>
+<div class="container">
+  <div class="image-wrapper">
+    <img src="assets/dehradun photos/logo robo.avif" alt="Robot Hand">
+  </div>
+  <div class="text-wrapper">
+    <h2>ABOUT MY COLLEGE SPHERE</h2>
+    <p class="sub-heading">A unique learning environment.</p>
+    <p>On college sphere, students can easily find various information about different colleges, their courses, admission processes, fee structures, and other important details. This helps students choose the right college according to their preferences and qualifications. Students do not need to visit the websites of individual colleges; all the information is available in one place. The platform provides updates on important dates, eligibility criteria, and application procedures related to admissions, helping students apply on time and correctly. World can assist students in choosing the right direction by providing information about various career options and the colleges associated with them.</p>
+  </div>
+</div>
+    <section class="role-models-section">
+      <div class="text-overlay">
+        <h2>MEET YOUR ROLE MODELS:</h2>
+        <p class="tagline">THEIR LIFE, YOUR INSPIRATION!</p>
+      </div>
+      <div class="role-models-grid">
+          <div class="role-model">
+              <img src="assets/logo and campus view/Ajay-Bisaria.jpg" alt="Mr. Ajai R. Bisaria">
+              <p class="name">Mr. Ajai R. Bisaria</p>
+              
+          </div>
+          <div class="role-model">
+              <img src="assets/logo and campus view/abdul kalam.webp" alt="Dr. Satendra Kumar">
+              <p class="name">Dr. A.P.J Abdul Kalam</p>
+              
+          </div>
+          <div class="role-model">
+              <img src="assets/logo and campus view/sonu sharmA.jpg" alt="Mr. Ankur Kapoor">
+              <p class="name">Mr. Sonu Sharma</p>
+            
+          </div>
+          <div class="role-model">
+              <img src="assets/logo and campus view/loku.jpg" alt="Madam B. Lokutu">
+              <p class="name">Madam B. Lokutu</p>
+             
+          </div>
+          <div class="role-model">
+              <img src="assets/logo and campus view/gyan-sudha-mam.jpg.webp" alt="Gian Sudha Misra">
+              <p class="name">Gyan Sudha Misra</p>
+              
+          </div>
+          <div class="role-model">
+              <img src="assets/logo and campus view/kiran bedi.webp" alt="Dr. Kiran Bedi">
+              <p class="name">Dr. Kiran Bedi</p>
+              
+          </div>
+          <div class="role-model">
+              <img src="assets/logo and campus view/Sadhvi Bhagawati Saraswat.jpeg" alt="Sadhvi B. Saraswati">
+              <p class="name">Sadhvi B. Saraswati</p>
+             
+          </div>
+          <div class="role-model">
+            <img src="assets/logo and campus view/bill gates.webp" alt="Sadhvi B. Saraswati">
+            <p class="name">Mr. Bill Gates</p>
+           
+        </div>
+        <div class="role-model">
+          <img src="assets/logo and campus view/ratan rata.webp" alt="Sadhvi B. Saraswati">
+          <p class="name">Mr. Ratan Tata</p>
+         
+      </div>
+      <div class="role-model">
+        <img src="assets/logo and campus view/dhoni.avif" alt="Sadhvi B. Saraswati">
+        <p class="name">Mr. M.S Dhoni</p>
+       
+    </div>
+      </div>
+</section>
+
+
+    <script src="script.js"></script>
+
+    <section class="student-outcomes">
+      <div class="container">
+       
+          <div class="outcomes-grid">
+              <div class="outcome-box placements">
+                  <h3>Placements</h3>
+                  <div class="outcome-value">100%</div>
+                  <p class="outcome-subtext">Placements in 2021-22*</p>
+                  <p class="outcome-description">Our Career Services team works with a well-defined systematic process of meeting students'...</p>
+                  <a href="#" class="read-more">-></a>
+              </div>
+  
+              <div class="outcome-box entrepreneurship">
+                  <h3>Entrepreneurship</h3>
+                  <div class="outcome-value">250</div>
+                  <p class="outcome-subtext">Start-ups have received grants from Colleges</p>
+                  <p class="outcome-description">Runway Incubator provides access to resources, mentorship, funding, networking opportuniti...</p>
+                  <a href="#" class="read-more">-></a>
+              </div>
+  
+              <div class="outcome-box higher-education">
+                  <h3>Higher Education</h3>
+                  <div class="outcome-value">70</div>
+                  <p class="outcome-subtext">Tie-ups with global universities</p>
+                  <p class="outcome-description">With the world's best institutions as our partners, students stand to gain exceptional int...</p>
+                  <a href="#" class="read-more">-></a>
+              </div>
+          </div>
+      </div>
+  </section>
+ 
+    
+    <div class="recruiters-section">
+      <h2>Recruiters Across Industries</h2>
+      <div class="logo-slider-container">
+        <div class="logo-slider">
+          <img src="assets/logo and campus view/c 11.webp" alt="Radisson">
+          <img src="assets/logo and campus view/c 2.webp" alt="Maven Wave">
+          <img src="assets/logo and campus view/c10.webp" alt="Rubico">
+          <img src="assets/logo and campus view/c12.webp" alt="Indian Army">
+          <img src="assets/logo and campus view/c13.webp" alt="HCL">
+          <img src="assets/logo and campus view/c14.webp" alt="Bebo Technologies">
+          <img src="assets/logo and campus view/c15.webp" alt="BIGCH" class="hidden-logo">
+          <img src="assets/logo and campus view/c16.webp" alt="Taj Hotels" class="hidden-logo">
+          <img src="assets/logo and campus view/c17.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c18.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c19.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c20.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c3.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c4.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c5.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c6.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c6.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c7.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c8.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/c9.webp" alt="upGrad" class="hidden-logo">
+          <img src="assets/logo and campus view/company 1.webp" alt="upGrad" class="hidden-logo">
+        </div>
+      </div>
+      <div class="view-all-container">
+        <a href="#" id="view-all-button">View All <span style="font-size: 0.8em;">→</span></a>
+      </div>
+    </div>
+   <div class="footer-section">
+    <div class="college world">
+        <h1>COLLEGE <br> SPHERE <br>  2025</h1>
+        <p>LET'S MEET !</p>
+        <p>We at college sphere have been organizing yearly events to celebrate thought leaders in the education sector.</p>
+        <p>FOLLOW US :</p>
+        <div class="social-icons">
+                <a href="https://www.linkedin.com/in/sushant-kumar-saroj-b24b772b8"> </i>LINKDIN</a>
+                <a href="https://www.instagram.com/admissionconsultant_1?igsh=ZDBkYzZ4ZmUzaTQx"> </i>INSTAGRAM</a>
+                <a href="https://www.youtube.com/@Ojha78934"></i>YOUTUBE</a>
+        </div>
+    </div>
+
+    <div class="quick-links">
+        <h2>QUICK LINKS</h2>
+        <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="nextpage.html">About college sphere</a></li>
+    <li><a href="nextpage.html">About college sphere</a></li>
+    <li><a href="https://wa.me/919470626930?text=Hello%20sir%2C%20can%20you%20help%20me">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="sushant kumar saroj">
+        <p><img src="" alt="Email"> ojha78934@gmail.com</p>
+    </div>
+
+    <div class="address">
+        <h2>ADDRESS</h2>
+     
+        <p>shelaqui <br> Dehradun</p>
+        <p>Get Direction →</p>
+    </div>
+
+    <div class="copyright">
+        <p>© COPYRIGHT 2025</p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</body>
+</html>
