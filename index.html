@@ -53,12 +53,15 @@
         <input type="email" id="email" name="email" required><br><br>
     
         <label for="dob">DOB:</label>
-        <input type="date" id="dob" name="dob" required><br><br>
+        <input type="text" name="dob" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" required><br><br>
+
     
         <label for="mobile">Mobile:</label>
         <input type="tel" id="mobile" name="mobile" required><br><br>
         <label for="state">State:</label>
-<select id="state" name="state" required onchange="populateCities()">
+ <!-- State Dropdown -->
+<label for="state">State:</label>
+<select id="state" name="state" required onchange="showCityInput()">
   <option value="">Select State</option>
   <option value="Uttar Pradesh">Uttar Pradesh</option>
   <option value="Maharashtra">Maharashtra</option>
@@ -89,20 +92,15 @@
   <option value="Arunachal Pradesh">Arunachal Pradesh</option>
   <option value="Mizoram">Mizoram</option>
   <option value="Sikkim">Sikkim</option>
-</select>
+</select><br><br>
+
+<!-- City Text Input -->
+<div id="cityInputContainer" style="display: none;">
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city" placeholder="Enter your city" required>
+</div>
 <br><br>
 
-<!-- Hidden input for 'Other' city -->
-<input type="text" id="other-city" name="other_city" placeholder="Enter your city" style="display:none; margin-top: 10px;">
-<br><br>
-<label for="city">City:</label>
-<select id="city" name="city" required onchange="checkOtherCity()">
-  <option value="">Select City</option>
-  <option value="Patna">Patna</option>
-  <option value="Gaya">Gaya</option>
-  <option value="Other">Other</option>
-</select>
-<br><br>
         <button type="submit">Submit</button>
       </form>
       <section class="student-outcomes">
@@ -135,6 +133,17 @@
             </div>
         </div>
     </section>
+    <div class="side-contact-tags">
+      <a href="tel:+919470626930" class="call-tag" aria-label="Call Us">
+          <img src="assets/logo and campus view/phone-call.png" alt="Call Icon">
+      </a>
+      <a href="https://wa.me/9470626930" class="whatsapp-tag" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
+          <img src="assets/logo and campus view/logo.png" alt="WhatsApp Icon">
+      </a>
+      <a href="index.html" class="whatsapp-tag" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
+        <img src="assets/logo and campus view/user.png" alt="WhatsApp Icon">
+    </a>
+    </div>
     
     <div class="recruiters-section">
         <h2>Recruiters Across Industries</h2>
@@ -209,94 +218,53 @@
             <p>© COPYRIGHT 2025</p>
         </div>
     </div>
-
-    <script>
+  
+      <!-- EmailJS script -->
+      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    
+      <script>
+        // Initialize EmailJS
         (function() {
-          emailjs.init("SqFbBOc1UZ0b0mTBR"); // ✅ Your public key
+          emailjs.init("SqFbBOc1UZ0b0mTBR"); // ✅ Your Public Key
         })();
-      
+    
+        // Show custom city input if "Other" is selected
+        function checkOtherCity() {
+          const cityDropdown = document.getElementById("city");
+          const otherCityInput = document.getElementById("other-city");
+          if (cityDropdown.value === "Other") {
+            otherCityInput.style.display = "block";
+          } else {
+            otherCityInput.style.display = "none";
+            otherCityInput.value = "";
+          }
+        }
+    
+        // Send form via EmailJS and redirect
         document.getElementById("signup-form").addEventListener("submit", function(e) {
           e.preventDefault();
-      
+    
           emailjs.sendForm("service_xs990vg", "template_iz7qqxr", this)
             .then(function(response) {
               alert("Form submitted successfully!");
-      
-              // ✅ Redirect to nextpage.html after email is sent
-              window.location.href = "nextpage.html";
+              window.location.href = "nextpage.html"; // ✅ Redirect after success
             }, function(error) {
-              alert("Error: " + JSON.stringify(error));
+              alert("Error sending form: " + JSON.stringify(error));
             });
         });
       </script>
       <script>
-        const stateCityMap = {
-          "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi"],
-          "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
-          "Bihar": ["Patna", "Gaya", "Bhagalpur"],
-          "West Bengal": ["Kolkata", "Howrah", "Durgapur"],
-          "Madhya Pradesh": ["Bhopal", "Indore", "Jabalpur"],
-          "Rajasthan": ["Jaipur", "Udaipur", "Jodhpur"],
-          "Karnataka": ["Bangalore", "Mysore", "Hubli"],
-          "Gujarat": ["Ahmedabad", "Surat", "Vadodara"],
-          "Andhra Pradesh": ["Vijayawada", "Visakhapatnam", "Guntur"],
-          "Odisha": ["Bhubaneswar", "Cuttack", "Rourkela"],
-          "Telangana": ["Hyderabad", "Warangal", "Nizamabad"],
-          "Kerala": ["Thiruvananthapuram", "Kochi", "Kozhikode"],
-          "Assam": ["Guwahati", "Dibrugarh", "Silchar"],
-          "Jharkhand": ["Ranchi", "Jamshedpur", "Dhanbad"],
-          "Punjab": ["Amritsar", "Ludhiana", "Jalandhar"],
-          "Chhattisgarh": ["Raipur", "Bilaspur", "Durg"],
-          "Haryana": ["Gurgaon", "Faridabad", "Panipat"],
-          "Delhi": ["New Delhi", "Dwarka", "Saket"],
-          "Jammu and Kashmir": ["Srinagar", "Jammu", "Baramulla"],
-          "Uttarakhand": ["Dehradun", "Haridwar", "Haldwani"],
-          "Himachal Pradesh": ["Shimla", "Manali", "Dharamshala"],
-          "Tripura": ["Agartala"],
-          "Meghalaya": ["Shillong"],
-          "Manipur": ["Imphal"],
-          "Nagaland": ["Kohima", "Dimapur"],
-          "Goa": ["Panaji", "Margao"],
-          "Arunachal Pradesh": ["Itanagar"],
-          "Mizoram": ["Aizawl"],
-          "Sikkim": ["Gangtok"]
-        };
+        function showCityInput() {
+          const state = document.getElementById("state").value;
+          const cityContainer = document.getElementById("cityInputContainer");
       
-        function populateCities() {
-          const stateSelect = document.getElementById("state");
-          const citySelect = document.getElementById("city");
-          const selectedState = stateSelect.value;
-      
-          // Clear previous cities
-          citySelect.innerHTML = "<option value=''>Select City</option>";
-      
-          if (stateCityMap[selectedState]) {
-            stateCityMap[selectedState].forEach(city => {
-              const option = document.createElement("option");
-              option.value = city;
-              option.textContent = city;
-              citySelect.appendChild(option);
-            });
-          }
-        }
-      </script>
-      <script>
-        function checkOtherCity() {
-          const cityDropdown = document.getElementById("city");
-          const otherCityInput = document.getElementById("other-city");
-      
-          if (cityDropdown.value === "Other") {
-            otherCityInput.style.display = "inline-block";
-            otherCityInput.required = true;
+          if (state !== "") {
+            cityContainer.style.display = "block";
           } else {
-            otherCityInput.style.display = "none";
-            otherCityInput.required = false;
+            cityContainer.style.display = "none";
           }
         }
       </script>
-      
-      
-      
 
 </body>
 </html>
