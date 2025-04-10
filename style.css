@@ -1373,5 +1373,101 @@ h3 {
 #signup-form button:hover {
   background-color: #2c387e;
 }
+/* footer me repnsive banane ka jisse sarein chij me perfect dikhe */
+/* ======= FOOTER SECTION STYLING ======= */
+.footer-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #1b1f36;
+  color: rgb(255, 178, 178);
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.footer-section h1, 
+.footer-section h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.footer-section .college,
+.footer-section .quick-links,
+.footer-section .sushant,
+.footer-section .address {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: rgb(232, 153, 153);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+.footer-section img {
+  width: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Copyright */
+.footer-section .copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media screen and (max-width: 768px) {
+  .footer-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section .college,
+  .footer-section .quick-links,
+  .footer-section .sushant,
+  .footer-section .address {
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .social-icons a {
+    display: block;
+    margin: 5px 0;
+  }
+}
 
 
