@@ -1226,3 +1226,70 @@ img {
     flex-direction: column;
   }
 }
+/* isme hum apna jo box bada hua hai aur images choti ho gyi usko clear karne ke liye addd kar raha hu */
+/* Make carousel images responsive */
+.carousel img,
+.slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Make form inputs look better */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 10px auto;
+  display: block;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Center and style form section */
+form,
+.form-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+}
+
+/* Optional: improve heading and spacing */
+h2, h3, h4, label {
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+/* isme hum images ka size ko fix karenge */
+.carousel img {
+  width: 100%;
+  height: 300px; /* ya jitna tumhe chahiye fix size */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
