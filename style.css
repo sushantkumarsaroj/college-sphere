@@ -1,0 +1,1288 @@
+/* --- ORIGINAL CODE START --- */
+* {
+    box-sizing: border-box;
+    list-style: none;
+}
+header {
+    padding: 50px;
+    text-align: center;
+    background-color: rgb(67, 64, 64);
+}
+body {
+    margin: 0%;
+}
+nav {
+    background-color: none;
+    overflow: hidden;
+    margin: 0%;
+    text-decoration: none;
+}
+nav a {
+    display: block;
+    color: rgb(166, 196, 223);
+    text-decoration: none;
+    padding: 10px 15px;
+    float: left;
+}
+body {
+    background-color: rgb(240, 233, 160);
+}
+body h2 span {
+    background-color: rgb(118, 194, 167);
+    padding: 10px 55px;
+    border-radius: 20px;
+    color: white;
+}
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.carousel-cell {
+    width: 66%;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.carousel-cell img {
+    width: 100%;
+}
+.profile_img {
+    border-radius: 50%;
+}
+.profile_name {
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+    text-transform: uppercase;
+    margin: 20px 0px 30px 0px;
+}
+.sm_handle a {
+    background-color: rgb(117, 229, 229);
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 5px 10px;
+    text-decoration: none;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: rgb(164, 171, 110);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.logo {
+    width: 150px;
+    height: auto;
+    background-color: transparent;
+    mix-blend-mode: multiply; /* Background को हटाने में मदद करेगा */
+}
+header {
+    background-color: #5C4B51; /* Background Color */
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    width: 130px; /* Logo Size */
+    height: auto;
+
+    margin-right: 15px; /* Logo aur Heading ke Beech Space */
+}
+
+h1 {
+    color: #FFD700; /* Heading Color */
+    font-size: 2rem;
+}
+.navbar {
+    background-color: none;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-btn {
+    background-color: rgb(106, 152, 196);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 0 5px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-btn:hover {
+    background-color: none;
+    transform: scale(1.1); /* Slight Zoom Effect */
+}
+
+.search-input {
+    width: 500px; /* Search bar ki width */
+    height: 45px; /* --- EDIT: Height fixed to a normal value (was 350px) --- */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.search-button:hover {
+    background-color: #0056b3;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dfffe0;
+    text-align: center;
+}
+
+h1 {
+    color: #000;
+}
+
+.menu button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #6495ED;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+input, button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e0e0e0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+#colleges input,
+#exams input,
+#courses input {
+    display: block;  /* हर इनपुट को ब्लॉक में बदल देगा (एक लाइन में दिखाने के लिए) */
+    width: 100%;    /* पूरे कंटेनर की चौड़ाई लेगा */
+    margin-bottom: 10px;  /* हर इनपुट के बीच गैप देगा */
+}
+/* 📌 1. सभी इनपुट बॉक्स को सही आकार में लाने के लिए */
+.section input[type="text"] {
+    display: block;  /* एक लाइन में दिखाने के लिए */
+    width: 80%;  /* इनपुट फील्ड की चौड़ाई को सीमित रखना */
+    max-width: 100%;
+    min-width: 400px; /* मैक्सिमम साइज सेट करें */
+    padding: 10px;  /* इनपुट बॉक्स के अंदर स्पेस */
+    font-size: 14px;  /* टेक्स्ट बड़ा और क्लियर दिखाने के लिए */
+    border: 1px solid #ccc;  /* बॉर्डर को सेट करने के लिए */
+    border-radius: 5px;  /* बॉर्डर को हल्का गोल करने के लिए */
+    box-sizing: border-box; /* साइज को कंटेनर में सही रखने के लिए */
+    margin-bottom: 8px; /* हर इनपुट बॉक्स के बीच में थोड़ा स्पेस */
+}
+
+/* 📌 2. नेविगेशन बटन (Colleges, Exams, Courses...) को सही आकार में रखने के लिए */
+.menu button {
+    padding: 10px 15px; /* बटन का साइज सही करने के लिए */
+    font-size: 16px; /* टेक्स्ट को क्लियर करने के लिए */
+    border-radius: 5px; /* बॉर्डर को हल्का गोल करने के लिए */
+    margin: 5px; /* बटन के बीच स्पेस रखने के लिए */
+}
+
+/* 📌 3. सेक्शन को ठीक करने के लिए */
+.section {
+    padding: 20px;
+    background: #f7bfbf; /* बैकग्राउंड को हल्का सफेद रखने के लिए */
+    border-radius: 10px; /* हल्का गोल बॉक्स दिखाने के लिए */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* हल्का शैडो इफेक्ट */
+    margin-top: 10px;
+}
+
+/* 📌 4. हेडिंग को थोड़ा स्टाइलिश बनाने के लिए */
+.section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333; /* गहरे ग्रे रंग में टेक्स्ट */
+    text-align: center;
+}
+/* iska use hum karenge jo colllege tab andr colleges hai unko box me karenge link ko */
+.college-box a {
+    display: block; /* Yeh har link ko alag line pe dikhayega */
+    background: white;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black; /* Border add karega box effect ke liye */
+}
+/* isme hum jo colleges kke name hai unko vertically likhenge */
+.colleges-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.college-link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 5px; /* वैकल्पिक: लिंक्स के बीच जगह जोड़ता है */
+}
+/* ab woh jo collegs ke vericallly huye hai unko hum box me dalenge */
+.colleges-container {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px; /* कंटेनर के अंदर पैडिंग */
+    border: 1px solid #ddd; /* हल्का बॉर्डर */
+    border-radius: 10px; /* कंटेनर के कोनों को गोल करता है */
+}
+
+.college-link {
+    display: block;
+    text-decoration: none;
+    margin: 8px 0; /* प्रत्येक बॉक्स के बीच मार्जिन */
+    padding: 12px; /* बॉक्स के अंदर पैडिंग */
+
+    border-radius: 8px; /* बॉक्स के कोनों को गोल करता है */
+    background-color: #fff; /* सफेद बैकग्राउंड रंग */
+    color: #333; /* टेक्स्ट रंग */
+    font-size: 16px; /* टेक्स्ट का आकार */
+}
+
+.college-link:hover {
+    background-color: #f0f0f0; /* होवर पर हल्का ग्रे बैकग्राउंड */
+}
+/* yeh shivalik college wala page  ka hai */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(123, 88, 88);
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+.left-content {
+    flex: 2;
+    padding-right: 20px; /* दाईं ओर थोड़ी जगह */
+    background-color: rgb(250, 255, 252);
+}
+
+.right-content {
+    flex: 1;
+    background-color: #f5f1a9; /* हल्का ग्रे बैकग्राउंड */
+    padding: 20px;
+    border-radius: 8px; /* गोल कोने */
+}
+
+.buttons button {
+    margin: 10px 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.campus-view img {
+    width: 100%;
+    margin-bottom: 10px; /* इमेज के नीचे थोड़ी जगह */
+    border-radius: 8px; /* इमेज के गोल कोने */
+}
+
+.campus-view button {
+    background-color: #d51818; /* हल्का ग्रे बैकग्राउंड */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* बटन को 100% चौड़ाई दें */
+    margin-top: 10px; /* बटन के ऊपर थोड़ी जगह */
+}
+/* iske ander hum fee structure wala box ke ander wla kaam kare */
+.fee-structure-section {
+    background-color: #f9f9f9; /* हल्का ग्रे बैकग्राउंड */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px; /* नीचे थोड़ी जगह */
+}
+
+.fee-structure-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.course-box {
+    background-color: #faf7fb; /* हल्का ग्रे बैकग्राउंड */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px; /* नीचे थोड़ी जगह */
+}
+
+.course-box h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.course-box p {
+    margin-bottom: 10px;
+}
+
+.course-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.course-box th, .course-box td {
+    border: 1px solid #fa5757;
+    padding: 8px;
+    text-align: left;
+}
+
+.course-box th {
+    background-color: #f2f2f2;
+}
+
+.table-header { /* यहाँ .table-header क्लास के लिए स्टाइलिंग जोड़ी गई है */
+    background-color: #fdfdfd; /* हेडर बॉक्स का रंग बदला गया है */
+}
+
+.header-cell { /* यहाँ .header-cell क्लास के लिए स्टाइलिंग जोड़ी गई है */
+    background-color: #474bab; /* हेडर सेल बॉक्स का रंग बदला गया है */
+}
+
+.course-box button {
+    background-color: #3c699a;
+    color: rgb(255, 254, 255);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+/* isme shivalik college wala page ka footer hai aisa hiii sab college ke page ka footer hoga */
+.footer-section {
+    background-color: #20201f;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.collegeworld h1 {
+    font-size: 30px;
+    color: #ccc;
+}
+
+.collegeworld p {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.quick-links h2, .sushantkumarsaroj h2, .address h2 {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin-bottom: 5px;
+}
+
+.sushantkumarsaroj p img {
+    margin-right: 5px;
+}
+
+.address a img {
+    width: 200px;
+}
+
+.address p {
+    margin-top: 10px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 10px;
+}
+/* table wala structure jisme  particulars aur college 25 hai */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+/* isme hum head tag me upeer me hai usme hover add karenge */
+header nav a {
+    text-decoration: none;
+    color: #eee2e2;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* स्मूथ ट्रांज़िशन के लिए */
+}
+
+header nav a:hover {
+    background-color: #f0f0f0; /* होवर पर बैकग्राउंड कलर बदलें */
+    color: #007bff; /* होवर पर टेक्स्ट कलर बदलें */
+}
+/* ab uttranchal ka page yaha se start */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #764e4e;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #f6efef;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+header nav a:hover {
+    background-color: #ddd;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-content {
+    width: 60%;
+}
+
+.right-content {
+    width: 35%;
+}
+
+.campus-view img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.rankings {
+    background-color: #ffc107;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+/* box wala */
+.brochure-container {
+    display: inline-block; /* लिंक को इनलाइन-ब्लॉक बनाएं */
+    background-color: #2b619b; /* कंटेनर का बैकग्राउंड रंग नीला करें */
+    padding: 5px 10px; /* कंटेनर में पैडिंग जोड़ें */
+    border-radius: 5px; /* कंटेनर के कोनों को गोल करें */
+}
+
+.brochure-container a {
+    color: white; /* लिंक का टेक्स्ट रंग सफेद करें */
+    text-decoration: none; /* लिंक के नीचे अंडरलाइन हटाएं */
+}
+/* new mwe jo search container wala add kiya hu nav bar wala yehi wala hai  */
+
+
+.colleges-button {
+    background-color: #007bff; /* Example blue color for Colleges */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px; /* Add spacing between buttons */
+}
+
+.colleges-button:hover {
+    background-color: #e4e651; /* Darker blue on hover */
+}
+
+.exams-button {
+    background-color: #007bff; /* Example orange color for Exams */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.exams-button:hover {
+    background-color: #e4e651; /* Darker orange on hover */
+}
+
+.courses-button {
+    background-color: #007bff; /* Example green color for Courses */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.courses-button:hover {
+    background-color: #e4e651; /* Darker green on hover */
+}
+
+.events-button {
+    background-color: #007bff; /* Example red color for Events */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.events-button:hover {
+    background-color: #e4e651; /* Darker red on hover */
+}
+.top-navigation {
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: relative; /* ADD THIS LINE */
+}
+.search-container {
+    position: absolute; /* CHANGE float TO absolute */
+    top: 10px;        /* Adjust this value to align vertically */
+    right: 20px;       /* Adjust this value to control the right spacing */
+    display: flex;     /* Keep input and button in a row */
+    align-items: right; /* Vertically align input and button */
+    /* REMOVE float: right; */
+    margin-top: 0;     /* Remove or reset margin-top */
+    margin-right: 0;   /* Remove or reset margin-right */
+}
+.top-navigation .search-container button {
+    background-color: #007bff; /* Replace with your color code (e.g., #007bff for blue) */
+    color: white; /* Optional: Set text color for better contrast */
+    /* Add any other desired styles for the button */
+}
+.top-navigation .search-container button:hover {
+    background-color: #e4e651;
+}
+/* isme hum apne company logos wala section ka design ka code likhenge */
+.recruiters-section {
+    padding: 30px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.recruiters-section h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.logo-slider-container {
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-slider {
+    display: flex;
+    white-space: nowrap; /* Prevent logos from wrapping to the next line */
+    animation: slide 30s linear infinite; /* Adjust the 30s for desired speed */
+}
+
+.logo-slider img {
+    height: 50px;
+    margin: 0 20px;
+    flex-shrink: 0; /* Prevent logos from shrinking */
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.logo-slider img:hover {
+    opacity: 1;
+}
+
+.view-all-container {
+    margin-top: 20px;
+}
+
+.view-all-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.view-all-container a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% { /* Calculate how much to translate based on the total width of the logos */
+        /* We'll use JavaScript to get this dynamically for accuracy */
+        transform: translateX(-100%);
+    }
+}
+
+/* isme hum photo robot hand  wala dalenge */
+.container {
+    display: flex; /* Arrange image and text side by side */
+    background-color: #130e0f; /* Light blue background for the box (adjust as needed) */
+    border: 1px solid #ccc; /* Optional: Add a border to the box */
+    padding: 20px; /* Add padding inside the box */
+    margin: 20px; /* Add margin around the box */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.image-wrapper {
+    flex: 0 0 auto; /* Don't grow or shrink, auto width */
+    margin-right: 20px; /* Add some space between the image and text */
+    max-width: 300px; /* Adjust the maximum width of the image */
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.text-wrapper {
+    flex: 1; /* Allow text to take up remaining space */
+    color: #f6f6f6;
+}
+
+.text-wrapper h2 {
+    color: #007bff; /* Blue color for the heading (adjust as needed) */
+    margin-top: 0; /* Remove default top margin for the heading */
+}
+
+.text-wrapper .sub-heading {
+    font-style: italic;
+    color: #5ba6e8; /* Gray color for the subheading (adjust as needed) */
+    margin-bottom: 10px;
+}
+/* isme hum apna red wala box wala code likhenge */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.role-models-section {
+    position: relative;
+    background-color: #fff; /* white background */
+    padding: 120px 20px 40px;
+    overflow: hidden;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.text-overlay h2 {
+    font-size: 2em;
+    color: #000;
+    margin: 0;
+}
+
+.text-overlay .tagline {
+    font-style: italic;
+    font-size: 1em;
+    color: #333;
+    margin-top: 5px;
+}
+
+.role-models-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 100px 20px 20px;
+    scrollbar-width: none;
+}
+
+.role-models-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.role-model {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.role-model img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.role-model .name {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #000;
+    margin-top: 5px;
+}
+/* isme hum student outcomes wala karenge */
+body {
+    background-color: #f4f4f4; /* You can change this to white (#fff) or any other color you prefer for the overall page background */
+}
+
+/* --- Student Outcomes Section --- */
+.student-outcomes {
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Light grey background */
+    text-align: center; /* Center the heading */
+}
+
+.student-outcomes .container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+
+
+.student-outcomes .outcomes-grid {
+    display: flex;
+    justify-content: center; /* Center the boxes horizontally */
+    gap: 20px; /* Spacing between boxes */
+    margin-top: 20px; /* Space between heading and boxes */
+}
+
+.student-outcomes .outcome-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 300px; /* Fixed width for each box */
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.student-outcomes .outcome-box h3 {
+    color: #007bff; /* Blue heading */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.student-outcomes .outcome-box .outcome-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.student-outcomes .outcome-box .outcome-subtext {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.student-outcomes .outcome-box .outcome-description {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.student-outcomes .outcome-box .read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.student-outcomes .outcome-box .read-more:hover {
+    opacity: 0.8;
+}
+
+/* Specific styles for each box */
+.student-outcomes .outcome-box.placements h3 {
+    color: #28a745; /* Green for Placements */
+}
+
+.student-outcomes .outcome-box.entrepreneurship h3 {
+    color: #ffc107; /* Yellow/Orange for Entrepreneurship */
+}
+
+.student-outcomes .outcome-box.higher-education h3 {
+    color: #007bff; /* Blue for Higher Education */
+}
+/* isme hum jo our coleges wala box hao usko edit karenge */
+.our-colleges-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.colleges-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    scroll-snap-type: x mandatory; /* Enable smooth snapping */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+.college-card {
+    flex: 0 0 auto;
+    width: 300px; /* Adjust as needed */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    scroll-snap-align: start; /* Snap to the start of each card */
+    background-color: #968f8f;
+}
+
+.college-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.college-info {
+    padding: 15px;
+}
+
+.college-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.view-details {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.view-details:hover {
+    text-decoration: underline;
+}
+
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #555;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.nav-button:hover {
+    color: #007bff;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #007bff;
+}
+
+/* Optional: Hide scrollbar for a cleaner look */
+.colleges-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.colleges-carousel {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+/* side me wala tag */
+.side-contact-tags {
+    position: fixed;
+    top: 50%; /* Adjust as needed to position vertically */
+    right: 20px; /* Adjust as needed to position horizontally */
+    transform: translateY(-50%); /* Center vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between the tags */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.call-tag,
+.whatsapp-tag {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0; /* Light background color */
+    color: #333; /* Dark text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.call-tag:hover,
+.whatsapp-tag:hover {
+    background-color: #ddd;
+}
+
+.call-tag img,
+.whatsapp-tag img {
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+    margin-right: 10px;
+}
+
+.whatsapp-tag {
+    background-color: #25D366; /* Green WhatsApp color */
+    color: white;
+}
+
+.whatsapp-tag:hover {
+    background-color: #128C7E; /* Darker WhatsApp color on hover */
+}
+
+.call-tag {
+    background-color: #007bff; /* Blue call color */
+    color: white;
+}
+
+.call-tag:hover {
+    background-color: #0056b3; /* Darker blue call color on hover */
+}
+/* isme heading wala phots ka  code dalenge jo apply now wagrea hai woh */
+.carousel {
+    background-color: #000; /* Optional: black background behind carousel */
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 383px;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay text styling */
+.overlay-text {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.overlay-text h4 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.overlay-text h4 span {
+    font-weight: bold;
+    font-style: italic;
+    color: #00aced;
+}
+
+.overlay-text h2 {
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+.overlay-text h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #ffd700;
+    text-transform: uppercase;
+}
+
+.overlay-text h3 {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.logo {
+    margin-top: 5px;
+    width: 100px;
+}
+
+/* Admission buttons styling */
+.admission-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 2;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn.blue {
+    background-color: #003366;
+}
+
+.btn.orange {
+    background-color: #ff7f00;
+}
+
+.btn.red {
+    background-color: #d62828;
+}
+
+/* --- ORIGINAL CODE END --- */
+
+
+/* --- ADDING NECESSARY FIXES FOR MOBILE/RESPONSIVENESS --- */
+/* Maine optimize nahi kiya, bas fixes add kiye hain taaki content break na ho */
+
+/* 1. Reset overflow-x for body to prevent page pulling to the side on mobile */
+body {
+    overflow-x: hidden;
+}
+
+/* 2. Fix the specific inputs that have min-width: 400px (this break mobile layout) */
+.section input[type="text"] {
+    min-width: unset; /* Remove min-width for mobile, will use set max-width later */
+}
+
+/* 3. Handling fixed display: flex in Header/Main/Footer for Mobile */
+@media (max-width: 768px) {
+    /* Stack elements vertically instead of horizontal row */
+    header,
+    .main-content,
+    .footer-section,
+    .container {
+        display: flex;
+        flex-direction: column !important; /* Yahan !on ki jagah !important hoga */
+    }
+
+    /* Set full width for items that were side-by-side */
+    .left-content,
+    .right-content,
+    .student-outcomes .outcome-box,
+    .search-input {
+        width: 100% !important;
+        min-width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px; /* Spacing between vertical items */
+    }
+
+    /* Reset absolute search container (it breaks mobile nav) */
+    .search-container {
+        position: static !important;
+        width: 100% !important;
+        margin-top: 15px;
+        float: none;
+        display: block;
+    }
+}
+/* yeh delete karna hai/*
+/* --- Force Mobile Layout --- */
+@media (max-width: 768px) {
+    /* Header Container ko row se column mein badlo */
+    .header-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Logo size mobile ke liye */
+    .logo {
+        width: 100px !important;
+        margin: 0 auto 10px auto !important;
+    }
+
+    /* "Welcome" wala span jo screen se bahar ja raha hai */
+    body h2 span {
+        padding: 10px 20px !important;
+        font-size: 1rem !important;
+        display: block !important;
+        width: fit-content !important;
+        margin: 0 auto !important;
+    }
+
+    /* Carousel ki height desktop wali hatane ke liye */
+    .carousel-cell img {
+        height: 250px !important;
+        object-fit: cover !important;
+    }
+
+    /* Form aur Sections ko screen ke andar lane ke liye */
+    .section, form {
+        width: 95% !important;
+        margin: 10px auto !important;
+        padding: 15px !important;
+    }
+
+    /* Student outcomes boxes ko ek ke niche ek karne ke liye */
+    .outcomes-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .outcome-box {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Footer ko stack karne ke liye */
+    .footer-section {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+}
