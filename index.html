@@ -154,41 +154,49 @@
 
     <script>
     // LEAD FORM LOGIC WITH REDIRECT
-    document.addEventListener("DOMContentLoaded", function() {
-        const leadForm = document.getElementById('leadForm');
-        const submitBtn = document.getElementById('submitBtn');
+document.addEventListener("DOMContentLoaded", function() {
+    const leadForm = document.getElementById('leadForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const leadGate = document.getElementById('leadGate');
 
-        if(leadForm) {
-            leadForm.addEventListener("submit", function(e) {
-                e.preventDefault();
-                
-                submitBtn.innerText = "Sending...";
-                submitBtn.disabled = true;
+    // 1. ZAROORI: Check karo kya user ne isi session (tab) mein login kiya hai?
+    if (sessionStorage.getItem('isLoggedIn') === 'true') {
+        leadGate.style.display = 'none'; // Agar kiya hai toh form chhupa do
+    }
 
-                const formData = new FormData(leadForm);
+    if(leadForm) {
+        leadForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
 
-                fetch(leadForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                }).then(response => {
-                    if (response.ok) {
-                        alert("Details Verified! Opening College List...");
-                        // ✅ REDIRECT TO NEXTPAGE.HTML
-                        window.location.href = "nextpage.html";
-                    } else {
-                        alert("Something went wrong. Please try again.");
-                        submitBtn.innerText = "Submit & Explore";
-                        submitBtn.disabled = false;
-                    }
-                }).catch(error => {
-                    alert("Internet check karo bhai!");
+            const formData = new FormData(leadForm);
+
+            fetch(leadForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    // 2. ZAROORI: Session mein save karo ki login ho gaya
+                    sessionStorage.setItem('isLoggedIn', 'true');
+                    
+                    alert("Details Verified! Opening College List...");
+                    window.location.href = "nextpage.html";
+                } else {
+                    alert("Something went wrong. Please try again.");
                     submitBtn.innerText = "Submit & Explore";
                     submitBtn.disabled = false;
-                });
+                }
+            }).catch(error => {
+                alert("Internet check karo bhai!");
+                submitBtn.innerText = "Submit & Explore";
+                submitBtn.disabled = false;
             });
-        }
-    });
+        });
+    }
+});
     </script>
 </body>
 </html>
