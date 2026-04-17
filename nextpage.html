@@ -55,84 +55,12 @@
     margin-left: -45px; /* Button ko bar ke thoda andar lane ke liye */
 }
 /* yeh jo hai nh woh lead form wala ka hi css style hai */
-/* Lead Gate Full Screen Overlay */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95); /* Screen ko poora block karne ke liye */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000; /* Taaki navigation ke bhi upar dikhe */
-}
 
-/* Form Box Styling */
-.modal-content {
-    background: white;
-    padding: 35px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* Inputs Styling */
-.modal-content input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box; /* Padding se box na badhe */
-    font-size: 15px;
-}
-
-/* Submit Button Styling */
-.modal-content button {
-    background: #007bff;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.modal-content button:hover {
-    background: #0056b3;
-}
 
   </style>
 
 </head>
 <body>
-<div id="leadGate" class="modal-overlay">
-  <div class="modal-content">
-    <h2 style="color: #007bff; margin-bottom: 10px;">College Sphere</h2>
-    <p style="margin-bottom: 20px; color: #555;">Please enter your details to access College & Fee information</p>
-    
-    <form id="leadForm" action="https://formspree.io/f/mpqkpyry" method="POST">
-      <input type="text" name="Student_Name" id="userName" placeholder="Full Name" required>
-      
-      <input type="tel" name="Phone_Number" id="userPhone" placeholder="Mobile Number" 
-             pattern="[6-9]{1}[0-9]{9}" maxlength="10" title="Please enter a valid 10-digit Indian number" required>
-      
-      <input type="email" name="Email_ID" id="userEmail" placeholder="Email Address" required>
-      
-      <input type="text" name="Location" id="userPlace" placeholder="Your City" required>
-      
-      <button type="submit" id="submitBtn">Submit & Explore</button>
-    </form>
-  </div>
-</div>
 <div class="top-navigation">
   <button class="colleges-button" onclick="showSection('colleges')">Colleges</button>
   <button class="events-button" onclick="showSection('events')">Events</button>
@@ -894,72 +822,7 @@
     }
   }
   // yeh wala code tumhara lead form ka hai jisse email per ayega
- document.addEventListener("DOMContentLoaded", function() {
-    const leadGate = document.getElementById('leadGate');
-    const leadForm = document.getElementById('leadForm');
-
-    // Har refresh par form dikhega (No storage check here)
-
-    if(leadForm) {
-        leadForm.addEventListener("submit", function(e) {
-            e.preventDefault();
-            
-            const phone = document.getElementById('userPhone').value;
-            const email = document.getElementById('userEmail').value;
-
-            // 1. REAL VALIDATION
-            const phonePattern = /^[6-9]\d{9}$/;
-            if (!phonePattern.test(phone)) {
-                alert("Bhai, sahi 10-digit mobile number dalo!");
-                return;
-            }
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert("Email galat hai!");
-                return;
-            }
-
-            // 2. SMART CHECK: Kya isi bande ne abhi submit kiya tha?
-            // Hum name aur phone ko milakar ek temporary key check karenge
-            const sessionKey = "sent_" + phone;
-            
-            if (sessionStorage.getItem(sessionKey) === "true") {
-                // Agar pehle hi bhej chuka hai isi session mein
-                console.log("Duplicate lead blocked from sending to Email.");
-                leadGate.style.display = "none";
-                alert("Welcome back! Access Granted.");
-                return; // Yahan se code ruk jayega, Formspree ko data nahi jayega
-            }
-
-            // 3. Agar naya user hai, toh data bhejo
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.innerText = "Sending...";
-            submitBtn.disabled = true;
-
-            const formData = new FormData(leadForm);
-            fetch(leadForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    // Isi session ke liye yaad rakho ki data bhej diya hai
-                    sessionStorage.setItem(sessionKey, "true");
-                    leadGate.style.display = "none";
-                    alert("Verification Successful! Access Granted.");
-                } else {
-                    alert("Error! Try again.");
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = "Submit & Explore";
-                }
-            }).catch(() => {
-                alert("Network Error!");
-                submitBtn.disabled = false;
-            });
-        });
-    }
-});
-
+ 
 </script>
 </body>
 </html>

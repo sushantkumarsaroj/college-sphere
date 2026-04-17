@@ -5,221 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>COLLEGE SPHERE | Home</title>
-    <meta name="description" content="Get latest fee structure, admission process, and placement details for Top Colleges in Dehradun like GNC, Alpine, Shivalik, and SIMS. Your complete admission guide for 2026.">
-<meta name="keywords" content="Best Colleges in Dehradun, Uttarakhand College Admission 2026, Pharmacy Colleges Dehradun, B.Tech Colleges Uttarakhand, College Sphere Dehradun">
-<meta name="author" content="Sushant Kumar Saroj">
-
-<meta property="og:title" content="College Sphere - Dehradun Admission Guide 2026">
-<meta property="og:description" content="Find the right college in Dehradun with updated fee structures and placement records.">
-<meta property="og:url" content="https://sushantkumarsaroj.github.io/college-sphere/">
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <meta name="description" content="Get latest fee structure, admission process, and placement details for Top Colleges in Dehradun.">
     
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <link rel="stylesheet" href="style.css">
+    
     <style>
-    /* Lead Gate Full Screen Overlay */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95); /* Screen ko poora block karne ke liye */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000; /* Taaki navigation ke bhi upar dikhe */
-}
+    /* Lead Gate Overlay */
+    .modal-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        display: flex; justify-content: center; align-items: center;
+        z-index: 10000;
+    }
 
-/* Form Box Styling */
-.modal-content {
-    background: white;
-    padding: 35px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
+    .modal-content {
+        background: white; padding: 35px; border-radius: 15px;
+        width: 90%; max-width: 400px; text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
 
-/* Inputs Styling */
-.modal-content input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box; /* Padding se box na badhe */
-    font-size: 15px;
-}
+    .modal-content input {
+        width: 100%; padding: 12px; margin: 10px 0;
+        border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
+        font-size: 15px;
+    }
 
-/* Submit Button Styling */
-.modal-content button {
-    background: #007bff;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.modal-content button:hover {
-    background: #0056b3;
-}
-</style>
+    .modal-content button {
+        background: #007bff; color: white; padding: 15px;
+        border: none; border-radius: 8px; cursor: pointer;
+        width: 100%; font-weight: bold; font-size: 16px;
+        margin-top: 15px; transition: 0.3s;
+    }
+    </style>
     
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    
-    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
+
   <div id="leadGate" class="modal-overlay">
-  <div class="modal-content">
-    <h2 style="color: #007bff; margin-bottom: 10px;">College Sphere</h2>
-    <p style="margin-bottom: 20px; color: #555;">Please enter your details to access College & Fee information</p>
-    
-    <form id="leadForm" action="https://formspree.io/f/mpqkpyry" method="POST">
-      <input type="text" name="Student_Name" id="userName" placeholder="Full Name" required>
+    <div class="modal-content">
+      <h2 style="color: #007bff; margin-bottom: 10px;">College Sphere</h2>
+      <p style="margin-bottom: 20px; color: #555;">Please enter your details to access College & Fee information</p>
       
-      <input type="tel" name="Phone_Number" id="userPhone" placeholder="Mobile Number" 
-             pattern="[6-9]{1}[0-9]{9}" maxlength="10" title="Please enter a valid 10-digit Indian number" required>
-      
-      <input type="email" name="Email_ID" id="userEmail" placeholder="Email Address" required>
-      
-      <input type="text" name="Location" id="userPlace" placeholder="Your City" required>
-      
-      <button type="submit" id="submitBtn">Submit & Explore</button>
-    </form>
+      <form id="leadForm" action="https://formspree.io/f/mpqkpyry" method="POST">
+        <input type="text" name="Student_Name" id="userName" placeholder="Full Name" required>
+        <input type="tel" name="Phone_Number" id="userPhone" placeholder="Mobile Number" 
+               pattern="[6-9]{1}[0-9]{9}" maxlength="10" required>
+        <input type="email" name="Email_ID" id="userEmail" placeholder="Email Address" required>
+        <input type="text" name="Location" id="userPlace" placeholder="Your City" required>
+        <button type="submit" id="submitBtn">Submit & Explore</button>
+      </form>
+    </div>
   </div>
-</div>
+
     <header>
         <div class="header-container">
-        <h1 style="color: rgb(251, 249, 244);">COLLEGE SPHERE</h1>
-            <img src="assets/img/logo.png" alt="college logo" class="logo">
-            </div>
-            
+            <h1 style="color: rgb(251, 249, 244);">COLLEGE SPHERE</h1>
+            <img src="assets/img/logo.png" alt="logo" class="logo">
+        </div>
     </header>
-    <h2><span>welcome to college sphere</span></h2>
-  <div class="carousel"data-flickity='{ "wrapAround": true }'>
-  <div class="carousel-cell"> <img src="assets/img/U7A9935-1024x607.jpg" height="383" ></div>
-  <div class="carousel-cell"><img src="assets/img/290_onlineuttar.jpg" height="383" ></div>
-  <div class="carousel-cell"> <img src="assets/img/desk-contact-new.webp" height="383"></div>
-  <div class="carousel-cell"><img src="assets/img/campus-building.jpg" height="383"></div>
-  <div class="carousel-cell"> <img src="assets/img/BannerWebCampusLife_Library.jpg" height="383" ></div>
-  <div class="carousel-cell"><img src="assets/img/images-4.jpeg" height="383"></div>
-  <div class="carousel-cell">  <img src="assets/img/images.jpeg" height="383"></div>
-  <div class="carousel-cell"><img src="assets/img/57212_cover2.jpg.jxl" height="383"></div>
-  <div class="carousel-cell">  <img src="assets/img/maya devi.jpeg" height="383"></div>
-  <div class ="carousel-cell"><img src="assets/img/upes-dehradun.jpg" height="383"></div>
 
-  </div>
+    <h2><span>Welcome to College Sphere</span></h2>
+    
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true }'>
+        <div class="carousel-cell"> <img src="assets/img/U7A9935-1024x607.jpg" height="383" ></div>
+        <div class="carousel-cell"><img src="assets/img/290_onlineuttar.jpg" height="383" ></div>
+        <div class="carousel-cell"> <img src="assets/img/desk-contact-new.webp" height="383"></div>
+        <div class="carousel-cell"><img src="assets/img/campus-building.jpg" height="383"></div>
+        <div class="carousel-cell"> <img src="assets/img/BannerWebCampusLife_Library.jpg" height="383" ></div>
+        <div class="carousel-cell"><img src="assets/img/images-4.jpeg" height="383"></div>
+    </div>
 
     <section>
-    <h3> We provide Information from the smallest to the biggest about all colleges here </h3> 
-     </section>
+        <h3> We provide Information from the smallest to the biggest about all colleges here </h3> 
+    </section>
+    
     <hr>
-    <h3>Before this you people will have to fill some basic details:-</h3>    
-      <form id="signup-form">
-        <label for="name">NAME:</label>
-        <input type="text" id="name" name="name" required><br><br>
     
-        <label>Gender:</label>
-        <input type="radio" id="male" name="gender" value="Male"> Male
-        <input type="radio" id="female" name="gender" value="Female"> Female
-        <input type="radio" id="neuter" name="gender" value="Neuter"> Neuter <br><br>
-    
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-    
-        <label for="dob">DOB:</label>
-        <input type="date" id="dob" name="dob" required><br><br>
-    
-        <label for="mobile">Mobile:</label>
-        <input type="tel" id="mobile" name="mobile" required><br><br>
-        <label for="state">State:</label>
-<select id="state" name="state" required onchange="populateCities()">
-  <option value="">Select State</option>
-  <option value="Uttar Pradesh">Uttar Pradesh</option>
-  <option value="Maharashtra">Maharashtra</option>
-  <option value="Bihar">Bihar</option>
-  <option value="West Bengal">West Bengal</option>
-  <option value="Madhya Pradesh">Madhya Pradesh</option>
-  <option value="Rajasthan">Rajasthan</option>
-  <option value="Karnataka">Karnataka</option>
-  <option value="Gujarat">Gujarat</option>
-  <option value="Andhra Pradesh">Andhra Pradesh</option>
-  <option value="Odisha">Odisha</option>
-  <option value="Telangana">Telangana</option>
-  <option value="Kerala">Kerala</option>
-  <option value="Assam">Assam</option>
-  <option value="Jharkhand">Jharkhand</option>
-  <option value="Punjab">Punjab</option>
-  <option value="Chhattisgarh">Chhattisgarh</option>
-  <option value="Haryana">Haryana</option>
-  <option value="Delhi">Delhi</option>
-  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-  <option value="Uttarakhand">Uttarakhand</option>
-  <option value="Himachal Pradesh">Himachal Pradesh</option>
-  <option value="Tripura">Tripura</option>
-  <option value="Meghalaya">Meghalaya</option>
-  <option value="Manipur">Manipur</option>
-  <option value="Nagaland">Nagaland</option>
-  <option value="Goa">Goa</option>
-  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-  <option value="Mizoram">Mizoram</option>
-  <option value="Sikkim">Sikkim</option>
-</select>
-<br><br>
-
-<!-- Hidden input for 'Other' city -->
-<input type="text" id="other-city" name="other_city" placeholder="Enter your city" style="display:none; margin-top: 10px;">
-<br><br>
-<label for="city">City:</label>
-<select id="city" name="city" required onchange="checkOtherCity()">
-  <option value="">Select City</option>
-  <option value="Patna">Patna</option>
-  <option value="Gaya">Gaya</option>
-  <option value="Other">Other</option>
-</select>
-<br><br>
-        <button type="submit">Submit</button>
-      </form>
-      <section class="student-outcomes">
+    <section class="student-outcomes">
         <div class="container">
-         
             <div class="outcomes-grid">
                 <div class="outcome-box placements">
                     <h3>Placements</h3>
                     <div class="outcome-value">100%</div>
                     <p class="outcome-subtext">Placements in 2021-22*</p>
-                    <p class="outcome-description">Our Career Services team works with a well-defined systematic process of meeting students'...</p>
+                    <p class="outcome-description">Our Career Services team works with a well-defined process...</p>
                     <a href="#" class="read-more">-></a>
                 </div>
-    
                 <div class="outcome-box entrepreneurship">
                     <h3>Entrepreneurship</h3>
                     <div class="outcome-value">250</div>
-                    <p class="outcome-subtext">Start-ups have received grants from Colleges</p>
-                    <p class="outcome-description">Runway Incubator provides access to resources, mentorship, funding, networking opportuniti...</p>
+                    <p class="outcome-subtext">Start-ups have received grants</p>
                     <a href="#" class="read-more">-></a>
                 </div>
-    
                 <div class="outcome-box higher-education">
                     <h3>Higher Education</h3>
                     <div class="outcome-value">70</div>
                     <p class="outcome-subtext">Tie-ups with global universities</p>
-                    <p class="outcome-description">With the world's best institutions as our partners, students stand to gain exceptional int...</p>
                     <a href="#" class="read-more">-></a>
                 </div>
             </div>
@@ -230,221 +115,80 @@
         <h2>Recruiters Across Industries</h2>
         <div class="logo-slider-container">
           <div class="logo-slider">
-            <img src="assets/logo and campus view/c 11.webp" alt="Radisson">
-            <img src="assets/logo and campus view/c 2.webp" alt="Maven Wave">
-            <img src="assets/logo and campus view/c10.webp" alt="Rubico">
-            <img src="assets/logo and campus view/c12.webp" alt="Indian Army">
             <img src="assets/logo and campus view/c13.webp" alt="HCL">
-            <img src="assets/logo and campus view/c14.webp" alt="Bebo Technologies">
-            <img src="assets/logo and campus view/c15.webp" alt="BIGCH" class="hidden-logo">
-            <img src="assets/logo and campus view/c16.webp" alt="Taj Hotels" class="hidden-logo">
-            <img src="assets/logo and campus view/c17.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c18.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c19.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c20.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c3.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c4.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c5.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c6.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c6.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c7.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c8.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/c9.webp" alt="upGrad" class="hidden-logo">
-            <img src="assets/logo and campus view/company 1.webp" alt="upGrad" class="hidden-logo">
+            <img src="assets/logo and campus view/c12.webp" alt="Indian Army">
+            <img src="assets/logo and campus view/c11.webp" alt="Radisson">
+            <img src="assets/logo and campus view/c 2.webp" alt="Maven Wave">
           </div>
         </div>
         <div class="view-all-container">
-          <a href="#" id="view-all-button">View All <span style="font-size: 0.8em;">→</span></a>
+          <a href="#" id="view-all-button">View All →</a>
         </div>
-      </div>
+    </div>
 
-        
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="script.js"></script>
     <div class="footer-section">
         <div class="college world">
-            <h1>COLLEGE <br> SPHERE <br>  2025</h1>
-            <p>LET'S MEET !</p>
-            <p>We at college sphere have been organizing yearly events to celebrate thought leaders in the education sector.</p>
+            <h1>COLLEGE <br> SPHERE <br> 2026</h1>
             <p>FOLLOW US :</p>
             <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/sushant-kumar-saroj-b24b772b8"> </i>LINKDIN</a>
-                    <a href="https://www.instagram.com/admissiondoon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> </i>INSTAGRAM</a>
-                    <a href="https://www.youtube.com/@Ojha78934"></i>YOUTUBE</a>
+                    <a href="https://www.linkedin.com/in/sushant-kumar-saroj-b24b772b8">LINKDIN</a>
+                    <a href="https://www.instagram.com/admissiondoon">INSTAGRAM</a>
+                    <a href="https://www.youtube.com/@Ojha78934">YOUTUBE</a>
             </div>
         </div>
     
         <div class="quick-links">
             <h2>QUICK LINKS</h2>
             <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="nextpage.html">About college sphere</a></li>
-        <li><a href="nextpage.html">About college sphere</a></li>
-        <li><a href="https://wa.me/919470626930?text=Hello%20sir%2C%20can%20you%20help%20me">Contact Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nextpage.html">About college sphere</a></li>
+                <li><a href="https://wa.me/919470626930">Contact Us</a></li>
             </ul>
         </div>
-    
-        <div class="sushant kumar saroj">
-            <p><img src="" alt="Email"> ojha78934@gmail.com</p>
-        </div>
-    
-        <div class="address">
-            <h2>ADDRESS</h2>
-         
-            <p>shelaqui <br> Dehradun</p>
-            <p>Get Direction →</p>
-        </div>
-    
         <div class="copyright">
             <p>© COPYRIGHT 2025</p>
         </div>
     </div>
 
+    <script src="script.js"></script>
+
     <script>
-        (function() {
-          emailjs.init("SqFbBOc1UZ0b0mTBR"); // ✅ Your public key
-        })();
-      
-        document.getElementById("signup-form").addEventListener("submit", function(e) {
-          e.preventDefault();
-      
-          emailjs.sendForm("service_xs990vg", "template_iz7qqxr", this)
-            .then(function(response) {
-              alert("Form submitted successfully!");
-      
-              // ✅ Redirect to nextpage.html after email is sent
-              window.location.href = "nextpage.html";
-            }, function(error) {
-              alert("Error: " + JSON.stringify(error));
-            });
-        });
-      </script>
-      <script>
-        const stateCityMap = {
-          "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi"],
-          "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
-          "Bihar": ["Patna", "Gaya", "Bhagalpur"],
-          "West Bengal": ["Kolkata", "Howrah", "Durgapur"],
-          "Madhya Pradesh": ["Bhopal", "Indore", "Jabalpur"],
-          "Rajasthan": ["Jaipur", "Udaipur", "Jodhpur"],
-          "Karnataka": ["Bangalore", "Mysore", "Hubli"],
-          "Gujarat": ["Ahmedabad", "Surat", "Vadodara"],
-          "Andhra Pradesh": ["Vijayawada", "Visakhapatnam", "Guntur"],
-          "Odisha": ["Bhubaneswar", "Cuttack", "Rourkela"],
-          "Telangana": ["Hyderabad", "Warangal", "Nizamabad"],
-          "Kerala": ["Thiruvananthapuram", "Kochi", "Kozhikode"],
-          "Assam": ["Guwahati", "Dibrugarh", "Silchar"],
-          "Jharkhand": ["Ranchi", "Jamshedpur", "Dhanbad"],
-          "Punjab": ["Amritsar", "Ludhiana", "Jalandhar"],
-          "Chhattisgarh": ["Raipur", "Bilaspur", "Durg"],
-          "Haryana": ["Gurgaon", "Faridabad", "Panipat"],
-          "Delhi": ["New Delhi", "Dwarka", "Saket"],
-          "Jammu and Kashmir": ["Srinagar", "Jammu", "Baramulla"],
-          "Uttarakhand": ["Dehradun", "Haridwar", "Haldwani"],
-          "Himachal Pradesh": ["Shimla", "Manali", "Dharamshala"],
-          "Tripura": ["Agartala"],
-          "Meghalaya": ["Shillong"],
-          "Manipur": ["Imphal"],
-          "Nagaland": ["Kohima", "Dimapur"],
-          "Goa": ["Panaji", "Margao"],
-          "Arunachal Pradesh": ["Itanagar"],
-          "Mizoram": ["Aizawl"],
-          "Sikkim": ["Gangtok"]
-        };
-      
-        function populateCities() {
-          const stateSelect = document.getElementById("state");
-          const citySelect = document.getElementById("city");
-          const selectedState = stateSelect.value;
-      
-          // Clear previous cities
-          citySelect.innerHTML = "<option value=''>Select City</option>";
-      
-          if (stateCityMap[selectedState]) {
-            stateCityMap[selectedState].forEach(city => {
-              const option = document.createElement("option");
-              option.value = city;
-              option.textContent = city;
-              citySelect.appendChild(option);
-            });
-          }
-        }
-      </script>
-      <script>
-        function checkOtherCity() {
-          const cityDropdown = document.getElementById("city");
-          const otherCityInput = document.getElementById("other-city");
-      
-          if (cityDropdown.value === "Other") {
-            otherCityInput.style.display = "inline-block";
-            otherCityInput.required = true;
-          } else {
-            otherCityInput.style.display = "none";
-            otherCityInput.required = false;
-          }
-        }
-        // yeh lead form wala code hai
-       document.addEventListener("DOMContentLoaded", function() {
-    const leadGate = document.getElementById('leadGate');
-    const leadForm = document.getElementById('leadForm');
+    // LEAD FORM LOGIC WITH REDIRECT
+    document.addEventListener("DOMContentLoaded", function() {
+        const leadForm = document.getElementById('leadForm');
+        const submitBtn = document.getElementById('submitBtn');
 
-    // --- UPDATE: Humne localStorage.getItem wala block hata diya hai ---
-    // Taaki har refresh par form screen par wapas aa jaye.
+        if(leadForm) {
+            leadForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                
+                submitBtn.innerText = "Sending...";
+                submitBtn.disabled = true;
 
-    if(leadForm) {
-        leadForm.addEventListener("submit", function(e) {
-            e.preventDefault();
-            
-            const phone = document.getElementById('userPhone').value;
-            const email = document.getElementById('userEmail').value;
+                const formData = new FormData(leadForm);
 
-            // --- REAL VALIDATION ---
-            // Phone check: 10 digits aur 6-9 se shuru hona chahiye
-            const phonePattern = /^[6-9]\d{9}$/;
-            if (!phonePattern.test(phone)) {
-                alert("Bhai, sahi 10-digit mobile number dalo!");
-                return;
-            }
-
-            // Email check: Sahi format hona chahiye
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert("Email galat hai! Sahi format dalo (jaise: example@gmail.com)");
-                return;
-            }
-
-            // Agar sab sahi hai, toh data Formspree ko bhejo
-            const formData = new FormData(leadForm);
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.innerText = "Sending...";
-            submitBtn.disabled = true;
-
-            fetch(leadForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    // Success! Sirf Form ko hide karo (Status SAVE nahi hoga)
-                    leadGate.style.display = "none";
-                    alert("Verification Successful! Access Granted.");
-                } else {
-                    alert("Something went wrong. Please try again.");
+                fetch(leadForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        alert("Details Verified! Opening College List...");
+                        // ✅ REDIRECT TO NEXTPAGE.HTML
+                        window.location.href = "nextpage.html";
+                    } else {
+                        alert("Something went wrong. Please try again.");
+                        submitBtn.innerText = "Submit & Explore";
+                        submitBtn.disabled = false;
+                    }
+                }).catch(error => {
+                    alert("Internet check karo bhai!");
                     submitBtn.innerText = "Submit & Explore";
                     submitBtn.disabled = false;
-                }
-            }).catch(error => {
-                alert("Internet check karo bhai!");
-                submitBtn.innerText = "Submit & Explore";
-                submitBtn.disabled = false;
+                });
             });
-        });
-    }
-});
-      </script>
-      
-      
-      
-
+        }
+    });
+    </script>
 </body>
-</html> 
+</html>
